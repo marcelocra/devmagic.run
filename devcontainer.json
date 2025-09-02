@@ -62,6 +62,9 @@
         "denoland.vscode-deno",
         "esbenp.prettier-vscode",
 
+        // Tailwind CSS support.
+        "bradlc.vscode-tailwindcss",
+
         // Git and version control.
         "eamodio.gitlens",
 
