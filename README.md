@@ -3,9 +3,9 @@
 > [!NOTE]
 > _If you just want to use it, run_:
 > ```sh
-> curl -fsSL https://devmagic.run | bash
+> curl -fsSL https://devmagic.run/install | bash
 > ```
-> _(P.S.: It is always recommended to [see what you are running](https://devmagic.run) before doing so.)_
+> _(P.S.: It is always recommended to [see what you are running](https://devmagic.run/install) before doing so.)_
 
 This directory contains the core configuration for the DevMagic development environment.
 
