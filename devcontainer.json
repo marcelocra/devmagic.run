@@ -6,7 +6,7 @@
     "TZ": "America/Sao_Paulo",
     "LC_ALL": "en_US.UTF-8",
     "LANG": "en_US.UTF-8",
-    "MCRA_USE_MISE": "${localEnv:MCRA_USE_MISE:true}",
+    "MCRA_USE_MISE": "${localEnv:MCRA_USE_MISE:false}",
     "OLLAMA_HOST": "${localEnv:OLLAMA_HOST:http://host.docker.internal:11434}"
   },
   "postCreateCommand": "curl -fsSL https://raw.githubusercontent.com/marcelocra/dotfiles/main/setup/devcontainer-setup.sh | bash",
