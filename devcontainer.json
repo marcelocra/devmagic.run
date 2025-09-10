@@ -78,6 +78,10 @@
         "GitHub.github-vscode-theme",
         "GitHub.vscode-pull-request-github",
 
+        // AI and LLM tools.
+        "google.gemini-cli-vscode-ide-companion",
+        "Anthropic.claude-code",
+
         // Container and Docker support.
         "ms-azuretools.vscode-containers",
         "ms-azuretools.vscode-docker",
