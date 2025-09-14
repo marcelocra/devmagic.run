@@ -13,6 +13,31 @@ This directory contains the core configuration for the DevMagic development envi
 - `docker-compose.yml`: Defines auxiliary services that can be run alongside the main development container.
 - `Dockerfile`: A simple Dockerfile that can be used for custom builds, currently deprecated in favor of a direct `image` reference in `devcontainer.json`.
 
+---
+
+## 📦 Consumer Usage (for other repositories)
+
+This repository is designed to be used as a **submodule** inside your projects, specifically mounted at `.devcontainer/`:
+
+```bash
+git submodule add https://github.com/marcelocra/devmagic.run.git .devcontainer
+```
+
+After adding, your project will have:
+
+```
+your-project/
+└── .devcontainer/        ← submodule
+    ├── devcontainer.json
+    ├── docker-compose.yml
+    ├── Dockerfile
+    └── README.md
+```
+
+From here, open the project in VS Code and "Reopen in Container."
+
+---
+
 ## Using Auxiliary Services (Ollama, Postgres, etc.)
 
 This environment is designed to be modular. The main dev container starts by default, and you can bring up additional services like `ollama` or `postgres` on demand.
@@ -50,7 +75,7 @@ You now have multiple containers running side-by-side. You can verify this by ru
 docker ps
 ```
 
-You will see your main `devcontainer` and the new service container(s). They are on the same Docker network and can communicate with each other using their service names (e.g., `ollama`, `postgres`).
+You will see your main devcontainer and the new service container(s). They are on the same Docker network and can communicate with each other using their service names (e.g., `ollama`, `postgres`).
 
 ### Step 4: Connect to the Service
 
@@ -71,3 +96,24 @@ docker compose --profile ai down
 # Stop postgres
 docker compose --profile postgres down
 ```
+
+---
+
+## 🛠️ Maintainer Usage (developing this repo itself)
+
+Normally, this repository provides the contents of a `.devcontainer/` folder when used as a submodule inside consumer projects.
+
+However, if you want to **develop this repository itself** inside a Dev Container:
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/marcelocra/devmagic.run.git
+   cd devmagic.run
+   ```
+
+2. A `.devcontainer/devcontainer.json` wrapper file is included, which simply extends the root `devcontainer.json`.  
+   VS Code will detect it and allow you to **“Reopen in Container”**.
+
+3. This setup ensures:
+   - **Consumers** see the expected `.devcontainer/` contents when using this repo as a submodule.
+   - **Maintainers** can work on `devmagic.run` itself in a self‑hosted Dev Container without extra steps.
