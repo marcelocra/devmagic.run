@@ -7,16 +7,25 @@
 > ```
 > _(P.S.: It is always recommended to [see what you are running](https://devmagic.run/install) before doing so.)_
 
-This repository contains the core configuration for the DevMagic development environment.  
-It can be used in three ways:
+## TL;DR
 
-1. **Standalone** → as a portable dev environment (no setup on host needed).  
-2. **Consumer** → as a `.devcontainer` submodule inside other projects.  
-3. **Maintainer** → to work on `devmagic.run` itself.
+DevMagic can be used in **three different ways**:
 
----
+1. **Standalone (recommended for most users)** — use this repo directly as a portable dev environment (no need to install Node, Python, Git, etc. on your host; just Podman/Docker + VS Code).
+2. **Consumer** — embed it as a `.devcontainer` submodule inside your own projects.
+3. **Maintainer** — work on `devmagic.run` itself, using its wrapper `.devcontainer`.
 
-## 💻 Standalone Usage (Portable Dev Environment)
+It also supports optional auxiliary services (Ollama, Postgres, Redis, etc.).
+
+👉 Jump to: [Standalone](#-standalone-usage-portable-dev-environment) · [Consumer](#-consumer-usage-for-other-repositories) · [Auxiliary Services](#using-auxiliary-services-ollama-postgres-etc) · [Maintainer](#-maintainer-usage-developing-this-repo-itself)
+
+## Overview
+
+This repository contains the core configuration for the DevMagic development environment.
+You can use it as a **standalone workspace**, as a **submodule in other projects**, or to
+**develop DevMagic itself**.
+
+## 💻 Standalone Usage (Portable Dev Environment) <a id="standalone"></a>
 
 You can use this repository **directly as your dev environment**. This is useful if:
 
@@ -62,9 +71,7 @@ You can use this repository **directly as your dev environment**. This is useful
 This makes `devmagic.run` a **portable coding box** you can carry
 between machines or use on a fresh OS in minutes.
 
----
-
-## 📦 Consumer Usage (for other repositories)
+## 📦 Consumer Usage (for other repositories) <a id="consumer"></a>
 
 This repository is also designed to be used as a **submodule** inside your projects, specifically mounted at `.devcontainer/`:
 
@@ -85,9 +92,7 @@ your-project/
 
 From here, open the project in VS Code and "Reopen in Container."
 
----
-
-## Using Auxiliary Services (Ollama, Postgres, etc.)
+## Using Auxiliary Services (Ollama, Postgres, etc.) <a id="aux"></a>
 
 This environment is designed to be modular. The main dev container starts by default, and you can bring up additional services like `ollama` or `postgres` on demand.
 
@@ -146,9 +151,7 @@ docker compose --profile ai down
 docker compose --profile postgres down
 ```
 
----
-
-## 🛠️ Maintainer Usage (developing this repo itself)
+## 🛠️ Maintainer Usage (developing this repo itself) <a id="maintainer"></a>
 
 Normally, this repository provides the contents of a `.devcontainer/` folder when used as a submodule inside consumer projects.
 
