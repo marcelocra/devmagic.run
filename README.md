@@ -17,7 +17,7 @@ DevMagic can be used in **three different ways**:
 
 It also supports optional auxiliary services (Ollama, Postgres, Redis, etc.).
 
-👉 Jump to: [Standalone](#-standalone-usage-portable-dev-environment) · [Consumer](#-consumer-usage-for-other-repositories) · [Auxiliary Services](#using-auxiliary-services-ollama-postgres-etc) · [Maintainer](#-maintainer-usage-developing-this-repo-itself)
+👉 Jump to: [Standalone](#standalone) · [Consumer](#consumer) · [Auxiliary Services](#aux) · [Maintainer](#maintainer)
 
 ## Overview
 
