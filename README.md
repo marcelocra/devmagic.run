@@ -17,7 +17,20 @@ DevMagic can be used in **three different ways**:
 
 It also supports optional auxiliary services (Ollama, Postgres, Redis, etc.).
 
-👉 Jump to: [Standalone](#standalone) · [Consumer](#consumer) · [Auxiliary Services](#aux) · [Maintainer](#maintainer)
+## Table of Contents
+
+- [Standalone Usage](#standalone)
+  - Requirements
+  - Getting Started
+  - Temporary Workspace Workflow
+- [Consumer Usage](#consumer)
+- [Auxiliary Services](#aux)
+  - Step 1: Open a Terminal in VS Code
+  - Step 2: Start an Auxiliary Service
+  - Step 3: Verify the Service is Running
+  - Step 4: Connect to the Service
+  - Step 5: Stopping a Service
+- [Maintainer Usage](#maintainer)
 
 ## Overview
 
