@@ -7,17 +7,66 @@
 > ```
 > _(P.S.: It is always recommended to [see what you are running](https://devmagic.run/install) before doing so.)_
 
-This directory contains the core configuration for the DevMagic development environment.
+This repository contains the core configuration for the DevMagic development environment.  
+It can be used in three ways:
 
-- `devcontainer.json`: The primary configuration file used by VS Code to define and create the development container.
-- `docker-compose.yml`: Defines auxiliary services that can be run alongside the main development container.
-- `Dockerfile`: A simple Dockerfile that can be used for custom builds, currently deprecated in favor of a direct `image` reference in `devcontainer.json`.
+1. **Standalone** → as a portable dev environment (no setup on host needed).  
+2. **Consumer** → as a `.devcontainer` submodule inside other projects.  
+3. **Maintainer** → to work on `devmagic.run` itself.
+
+---
+
+## 💻 Standalone Usage (Portable Dev Environment)
+
+You can use this repository **directly as your dev environment**. This is useful if:
+
+- You are on a fresh OS installation,
+- You don’t want to install development tools (Git, Node, Python, etc.) on your host,
+- You just want a temporary throw‑away workspace to hack on code.
+
+### Requirements
+
+- A container runtime (e.g. [Podman Desktop](https://podman-desktop.io) or Docker)
+- [Visual Studio Code](https://code.visualstudio.com/) (or any devcontainer‑compatible editor)
+
+### Getting Started
+
+1. Clone this repository:
+
+   ```bash
+   git clone https://github.com/marcelocra/devmagic.run.git
+   cd devmagic.run
+   ```
+
+   > 💡 If you don't have `git` installed locally, you can even use GitHub Desktop
+   > or download the repo as a zip, since this environment itself provides Git.
+
+2. Open the folder in VS Code and choose **“Reopen in Container.”**
+
+3. You now have a fully featured dev environment with Git, Node, Python,
+   and all other supported tools, **without installing anything else** on the host system.
+
+### Temporary Workspace Workflow
+
+- Use this repo as a personal dev terminal/workstation.  
+- Whenever you need to work on another repo:
+
+  ```bash
+  git clone https://github.com/other/repo.git
+  cd repo
+  code .
+  ```
+
+- Each cloned repo automatically uses the same dev container setup.
+
+This makes `devmagic.run` a **portable coding box** you can carry
+between machines or use on a fresh OS in minutes.
 
 ---
 
 ## 📦 Consumer Usage (for other repositories)
 
-This repository is designed to be used as a **submodule** inside your projects, specifically mounted at `.devcontainer/`:
+This repository is also designed to be used as a **submodule** inside your projects, specifically mounted at `.devcontainer/`:
 
 ```bash
 git submodule add https://github.com/marcelocra/devmagic.run.git .devcontainer
