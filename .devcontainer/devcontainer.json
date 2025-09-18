@@ -1,4 +1,0 @@
-{
-  "name": "DevMagic (self-hosted)",
-  "extends": "../devcontainer.json"
-}

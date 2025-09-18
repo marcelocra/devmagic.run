@@ -1,10 +1,12 @@
 # 🚀 DevMagic Environment
 
-> [!NOTE]
+> [!NOTE]\
 > _If you just want to use it, run_:
+>
 > ```sh
 > curl -fsSL https://devmagic.run/install | bash
 > ```
+>
 > _(P.S.: It is always recommended to [see what you are running](https://devmagic.run/install) before doing so.)_
 
 ## TL;DR
@@ -63,14 +65,32 @@ You can use this repository **directly as your dev environment**. This is useful
    > 💡 If you don't have `git` installed locally, you can even use GitHub Desktop
    > or download the repo as a zip, since this environment itself provides Git.
 
-2. Open the folder in VS Code and choose **“Reopen in Container.”**
+2. Copy the `./devcontainer.json` to the `.devcontainer` folder:
 
-3. You now have a fully featured dev environment with Git, Node, Python,
+   ```bash
+   cp ./devcontainer.json ./.devcontainer
+   ```
+
+   > [!NOTE]
+   > Once it is possible to [extend a devcontainer](https://github.com/devcontainers/spec/issues/22), this step won't be necessary anymore and we'll be able to simply:
+   >
+   > ```json
+   > {
+   >   "name": "DevMagic (self-hosted)",
+   >   "extends": "../devcontainer.json"
+   > }
+   > ```
+   >
+   > But don't hold your breath... the issue is from 2022.
+
+3. Open the folder in VS Code and choose **“Reopen in Container.”**
+
+4. You now have a fully featured dev environment with Git, Node, Python,
    and all other supported tools, **without installing anything else** on the host system.
 
 ### Temporary Workspace Workflow
 
-- Use this repo as a personal dev terminal/workstation.  
+- Use this repo as a personal dev terminal/workstation.
 - Whenever you need to work on another repo:
 
   ```bash
@@ -171,6 +191,7 @@ Normally, this repository provides the contents of a `.devcontainer/` folder whe
 However, if you want to **develop this repository itself** inside a Dev Container:
 
 1. Clone this repository:
+
    ```bash
    git clone https://github.com/marcelocra/devmagic.run.git
    cd devmagic.run
